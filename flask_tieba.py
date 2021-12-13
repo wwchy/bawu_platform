@@ -1,10 +1,7 @@
-from flask import Flask, jsonify, request,Response
-from flask import render_template, make_response, send_from_directory, abort,render_template_string
-from wsgiref.simple_server import make_server
-import cv2
+from flask import Flask , request 
+from flask import  make_response
 from flask_restful import Resource, Api
 import time
-import torch
 import urllib.parse
 
 import re
