@@ -9,8 +9,8 @@ import requests
 from lxml import etree
 
 BDUSS=BUDSS
-TIEBANAME=贴吧名
-NETNAME=网站地址
+TIEBANAME=贴吧名，不带吧字
+NETNAME=网站地址，域名，调试可以用http://127.0.0.1:8010
  
 
 TIEBANAME_url=urllib.parse.quote(TIEBANAME,encoding='utf-8') 
@@ -41,7 +41,7 @@ def httpget(url):
     res=response.text
     res=res.replace('<img src="/','<img src="https://tieba.baidu.com/')  
     res=res.replace('<img', '<img referrerpolicy="no-referrer"' )
-    res=re.sub('<div class="user_info">(.*)</div><nav class="nav">','<div class="user_info"><p class="info_mesaage">'+TIEBANAME+'务后台公开</p></div><nav class="nav">',res)
+    res=re.sub('<div class="user_info">(.*)</div><nav class="nav">','<div class="user_info"><p class="info_mesaage">'+TIEBANAME+'吧吧务后台公开</p></div><nav class="nav">',res)
      
     return res 
 class _index(Resource):
